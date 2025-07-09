@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LS2WVJ4QJ5"></script>
@@ -276,119 +275,6 @@
 	<!-- jsPDF -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-  <script>
-    // Bootstrap form validation
-    (() => {
-      'use strict';
-      const forms = document.querySelectorAll('.needs-validation');
-      Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-          if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-        }, false);
-      });
-    })();
 
-    let lastEstimate = { total: 0, discounted: 0 };
-
-    function calculateEstimate(send = false) {
-      const checkboxes = document.querySelectorAll('input[name="feature"]:checked');
-      const urgencyFactor = parseFloat(document.querySelector('input[name="urgency"]:checked').value);
-      const companySizeFactor = parseFloat(document.querySelector('input[name="companySize"]:checked').value);
-
-      let total = 0;
-      checkboxes.forEach(cb => total += parseFloat(cb.value));
-
-      total = total * urgencyFactor * companySizeFactor;
-      const discounted = total * 0.9;
-
-      lastEstimate.total = total;
-      lastEstimate.discounted = discounted;
-
-      document.getElementById('estimateDisplay').textContent = `Estimated Cost: R${total.toLocaleString()}`;
-      document.getElementById('discountedDisplay').textContent = `Limited-Time Offer: R${discounted.toLocaleString()} (10% Discount)`;
-
-      if (send) {
-        const estimateMessage = `Estimate Summary:\nEstimated: R${total.toLocaleString()}\nDiscounted: R${discounted.toLocaleString()}\n\nNote: This is a base estimate. We're happy to tailor a solution that suits your budget.`;
-        document.getElementById('estimateField').value = estimateMessage;
-        document.getElementById('estimatorForm').submit();
-      }
-    }
-
-    // Show confirmation modal using Bootstrap modal methods
-    function showConfirmation() {
-      // Check form validity before showing modal
-      const form = document.getElementById('estimatorForm');
-      if (!form.checkValidity()) {
-        form.classList.add('was-validated');
-        return;
-      }
-      calculateEstimate(false); // update estimate display
-      const modal = new bootstrap.Modal(document.getElementById('confirmationModal'));
-      modal.show();
-    }
-
-    function confirmSend() {
-      calculateEstimate(true);
-    }
-
-    // Download estimate as PDF using jsPDF
-    async function downloadPDF() {
-      const { jsPDF } = window.jspdf;
-      calculateEstimate(false); // ensure latest values
-
-      const doc = new jsPDF();
-
-      doc.setFontSize(18);
-      doc.text('Custom Software Project Estimate', 20, 20);
-
-      doc.setFontSize(12);
-      doc.text(`Name: ${document.getElementById('nameInput').value || '[Not Provided]'}`, 20, 40);
-      doc.text(`Email: ${document.getElementById('emailInput').value || '[Not Provided]'}`, 20, 50);
-
-      let y = 65;
-      doc.setFontSize(14);
-      doc.text('Selected Features:', 20, y);
-      y += 8;
-
-      const checkedFeatures = [...document.querySelectorAll('input[name="feature"]:checked')];
-      if (checkedFeatures.length === 0) {
-        doc.text('- None selected', 30, y);
-        y += 8;
-      } else {
-        checkedFeatures.forEach(feat => {
-          doc.text(`- ${feat.parentElement.textContent.trim()}`, 30, y);
-          y += 8;
-        });
-      }
-
-      const companySizeLabel = document.querySelector('input[name="companySize"]:checked').parentElement.textContent.trim();
-      const urgencyLabel = document.querySelector('input[name="urgency"]:checked').parentElement.textContent.trim();
-
-      doc.text(`Company Size: ${companySizeLabel}`, 20, y);
-      y += 10;
-      doc.text(`Urgency: ${urgencyLabel}`, 20, y);
-      y += 15;
-
-      doc.setFontSize(14);
-      doc.text('Estimate Summary:', 20, y);
-      y += 8;
-
-      doc.setFontSize(12);
-      doc.text(`Estimated Cost: R${lastEstimate.total.toLocaleString()}`, 30, y);
-      y += 8;
-      doc.text(`Limited-Time Offer: R${lastEstimate.discounted.toLocaleString()} (10% Discount)`, 30, y);
-      y += 15;
-
-      doc.setFontSize(10);
-      doc.setTextColor(100);
-      doc.text("Note: This is a base estimate. We're happy to tailor a solution that suits your budget.", 20, y);
-
-      doc.save('mewtee_software_estimate.pdf');
-    }
-  </script>
 </body>
 </html>
