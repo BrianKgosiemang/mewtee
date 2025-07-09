@@ -105,7 +105,7 @@
       </div>
 	  
   <div class="container">
-    <h2 class="mb-3">Custom Software Project Estimator</h2>
+    <h2><span class="accent-text">Custom Software</span> Project Estimator</h2>
     <p class="note">Note: This is a base estimate to help you plan — we're happy to work with your budget and offer flexible pricing where possible.</p>
 
     <form id="estimatorForm" action="https://formspree.io/f/mwpbdyda" method="POST" class="needs-validation" novalidate>
@@ -227,13 +227,13 @@
 
       <input type="hidden" name="estimate" id="estimateField" />
 
-      <div class="mb-3 d-flex gap-2 flex-wrap">
+      <div class="hero-actions"">
         <button type="button" class="btn btn-primary" onclick="calculateEstimate(false)">Preview Estimate</button>
         <button type="button" class="btn btn-success" onclick="showConfirmation()">Send Estimate</button>
-        <button type="button" class="btn btn-secondary" onclick="downloadPDF()">Download PDF</button>
+        <button type="button" class="btn btn-outline" onclick="downloadPDF()">Download PDF</button>
       </div>
 
-      <p class="total" id="estimateDisplay">Estimated Cost: R0</p>
+      <p class="total" id="estimateDisplay"><span class="accent-text">Estimated Cost:</span> R0</p>
       <p class="total text-danger" id="discountedDisplay"></p>
     </form>
   </div>
