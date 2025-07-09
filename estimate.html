@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LS2WVJ4QJ5"></script>
@@ -42,6 +43,11 @@
   <link href="assets/css/main.css" rel="stylesheet">
   
     <style>
+    body {
+      background: #f8f9fa;
+      padding: 2rem;
+      font-family: Arial, sans-serif;
+    }
     .total {
       font-size: 1.5em;
       font-weight: bold;
@@ -60,7 +66,7 @@
     }
   </style>
 </head>
-<body class="index-page">
+<body>
 
   <header id="header" class="header dark-background d-flex flex-column justify-content-center">
     <i class="header-toggle d-xl-none bi bi-list"></i>
@@ -94,7 +100,134 @@
     <h2 class="mb-3">Custom Software Project Estimator</h2>
     <p class="note">Note: This is a base estimate to help you plan — we're happy to work with your budget and offer flexible pricing where possible.</p>
 
-   
+    <form id="estimatorForm" action="https://formspree.io/f/mwpbdyda" method="POST" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="nameInput" class="form-label">Your Name</label>
+        <input type="text" class="form-control" id="nameInput" name="name" placeholder="Full Name" required />
+        <div class="invalid-feedback">Please enter your name.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="emailInput" class="form-label">Your Email</label>
+        <input type="email" class="form-control" id="emailInput" name="email" placeholder="Email Address" required />
+        <div class="invalid-feedback">Please enter a valid email.</div>
+      </div>
+
+      <fieldset class="mb-4">
+        <legend>Project Type</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="20000" id="webApp" />
+          <label class="form-check-label" for="webApp">Web App</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="30000" id="mobileApp" />
+          <label class="form-check-label" for="mobileApp">Mobile App</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="15000" id="backendApi" />
+          <label class="form-check-label" for="backendApi">Backend/API Only</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="mb-4">
+        <legend>Core Features</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="3000" id="login" />
+          <label class="form-check-label" for="login">User Login/Authentication</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="5000" id="dashboard" />
+          <label class="form-check-label" for="dashboard">Dashboard</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="7000" id="chat" />
+          <label class="form-check-label" for="chat">Real-time Chat</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="5000" id="payment" />
+          <label class="form-check-label" for="payment">Payment Integration</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="4000" id="barcode" />
+          <label class="form-check-label" for="barcode">Barcode Scanner</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="mb-4">
+        <legend>Design Requirements</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="8000" id="customUI" />
+          <label class="form-check-label" for="customUI">Custom UI/UX</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="4000" id="branding" />
+          <label class="form-check-label" for="branding">Branding</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="mb-4">
+        <legend>Data & Integrations</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="5000" id="apiIntegration" />
+          <label class="form-check-label" for="apiIntegration">API Integration</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="3000" id="cloudHosting" />
+          <label class="form-check-label" for="cloudHosting">Cloud Hosting Setup</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="mb-4">
+        <legend>Post-Launch Support</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="6000" id="support" />
+          <label class="form-check-label" for="support">First 3 Months Support</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="mb-4">
+        <legend>Company Size</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="companySize" value="1.0" id="solo" checked />
+          <label class="form-check-label" for="solo">Solo / Startup</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="companySize" value="1.1" id="small" />
+          <label class="form-check-label" for="small">Small (2–20 employees)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="companySize" value="1.2" id="medium" />
+          <label class="form-check-label" for="medium">Medium (21–100 employees)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="companySize" value="1.4" id="large" />
+          <label class="form-check-label" for="large">Large (100+ employees)</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="mb-4">
+        <legend>Urgency</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="urgency" value="1" id="standard" checked />
+          <label class="form-check-label" for="standard">Standard Timeline</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="urgency" value="1.2" id="urgent" />
+          <label class="form-check-label" for="urgent">Urgent (+20%)</label>
+        </div>
+      </fieldset>
+
+      <input type="hidden" name="estimate" id="estimateField" />
+
+      <div class="mb-3 d-flex gap-2 flex-wrap">
+        <button type="button" class="btn btn-primary" onclick="calculateEstimate(false)">Preview Estimate</button>
+        <button type="button" class="btn btn-success" onclick="showConfirmation()">Send Estimate</button>
+        <button type="button" class="btn btn-secondary" onclick="downloadPDF()">Download PDF</button>
+      </div>
+
+      <p class="total" id="estimateDisplay">Estimated Cost: R0</p>
+      <p class="total text-danger" id="discountedDisplay"></p>
+    </form>
   </div>
 
   <!-- Confirmation Modal -->
@@ -121,12 +254,6 @@
     </div>
 
   </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
