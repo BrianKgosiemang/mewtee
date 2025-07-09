@@ -1,112 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Mewtee - Get an estimate of your project</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 30px; background: #f8f8f8; }
-    h2 { color: #444; }
-    .section { background: white; padding: 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
-    label { display: block; margin-bottom: 8px; }
-    .total { font-size: 1.5em; font-weight: bold; color: green; }
-    #confirmationModal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LS2WVJ4QJ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LS2WVJ4QJ5');
+</script>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Mewtee - Build Your Project Estimate</title>
+<!-- Meta Description -->
+<meta name="description" content="Discover professional web development and digital solutions that help businesses grow. Our services include custom web design, e-commerce solutions, branding, and digital marketing strategies.">
+
+<!-- Meta Keywords -->
+<meta name="keywords" content="web development, digital solutions, e-commerce, custom web design, branding, digital marketing, responsive websites, SEO services">
+
+
+  <!-- Favicons -->
+   <!-- Standard Favicon -->
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+    <style>
+    body {
+      background: #f8f9fa;
+      padding: 2rem;
+      font-family: Arial, sans-serif;
     }
-    .modal-content {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      max-width: 400px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    .total {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: green;
     }
-    .note { font-style: italic; font-size: 0.95em; color: #666; margin-top: -10px; margin-bottom: 20px; }
+    /* Modal custom override */
+    #confirmationModal .modal-content {
+      padding: 2rem;
+      border-radius: 1rem;
+    }
+    .note {
+      font-style: italic;
+      font-size: 0.95em;
+      color: #666;
+      margin-bottom: 1rem;
+    }
   </style>
 </head>
 <body>
-  <h2>Custom Software Project Estimator</h2>
-  <p class="note">Note: This is a base estimate to help you plan — we're happy to work with your budget and offer flexible pricing where possible.</p>
 
-  <form id="estimatorForm" action="https://formspree.io/f/mwpbdyda" method="POST" novalidate>
-    <div class="section">
-      <label><strong>Your Name</strong></label>
-      <input type="text" name="name" placeholder="Full Name" required>
-      <label><strong>Your Email</strong></label>
-      <input type="email" name="email" placeholder="Email Address" required>
+  <header id="header" class="header dark-background d-flex flex-column justify-content-center">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="header-container d-flex flex-column align-items-start">
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+          <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+          <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+          <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+          <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="social-links text-center">
+        <a href="https://x.com/mewteehq" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.facebook.com/mewteehq" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/mewteehq" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://wa.me/27787336959" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/in/mewtee_hq" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+
     </div>
 
-    <div class="section">
-      <h3>Project Type</h3>
-      <label><input type="checkbox" name="feature" value="20000"> Web App</label>
-      <label><input type="checkbox" name="feature" value="30000"> Mobile App</label>
-      <label><input type="checkbox" name="feature" value="15000"> Backend/API Only</label>
-    </div>
+  </header>
+  
+  <main class="main">
 
-    <div class="section">
-      <h3>Core Features</h3>
-      <label><input type="checkbox" name="feature" value="3000"> User Login/Authentication</label>
-      <label><input type="checkbox" name="feature" value="5000"> Dashboard</label>
-      <label><input type="checkbox" name="feature" value="7000"> Real-time Chat</label>
-      <label><input type="checkbox" name="feature" value="5000"> Payment Integration</label>
-      <label><input type="checkbox" name="feature" value="4000"> Barcode Scanner</label>
-    </div>
+  <div class="container">
+    <h2 class="mb-3">Custom Software Project Estimator</h2>
+    <p class="note">Note: This is a base estimate to help you plan — we're happy to work with your budget and offer flexible pricing where possible.</p>
 
-    <div class="section">
-      <h3>Design Requirements</h3>
-      <label><input type="checkbox" name="feature" value="8000"> Custom UI/UX</label>
-      <label><input type="checkbox" name="feature" value="4000"> Branding</label>
-    </div>
+    <form id="estimatorForm" action="https://formspree.io/f/mwpbdyda" method="POST" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="nameInput" class="form-label">Your Name</label>
+        <input type="text" class="form-control" id="nameInput" name="name" placeholder="Full Name" required />
+        <div class="invalid-feedback">Please enter your name.</div>
+      </div>
 
-    <div class="section">
-      <h3>Data & Integrations</h3>
-      <label><input type="checkbox" name="feature" value="5000"> API Integration</label>
-      <label><input type="checkbox" name="feature" value="3000"> Cloud Hosting Setup</label>
-    </div>
+      <div class="mb-3">
+        <label for="emailInput" class="form-label">Your Email</label>
+        <input type="email" class="form-control" id="emailInput" name="email" placeholder="Email Address" required />
+        <div class="invalid-feedback">Please enter a valid email.</div>
+      </div>
 
-    <div class="section">
-      <h3>Post-Launch Support</h3>
-      <label><input type="checkbox" name="feature" value="6000"> First 3 Months Support</label>
-    </div>
+      <fieldset class="mb-4">
+        <legend>Project Type</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="20000" id="webApp" />
+          <label class="form-check-label" for="webApp">Web App</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="30000" id="mobileApp" />
+          <label class="form-check-label" for="mobileApp">Mobile App</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="15000" id="backendApi" />
+          <label class="form-check-label" for="backendApi">Backend/API Only</label>
+        </div>
+      </fieldset>
 
-    <div class="section">
-      <h3>Company Size</h3>
-      <label><input type="radio" name="companySize" value="1.0" checked> Solo / Startup</label>
-      <label><input type="radio" name="companySize" value="1.1"> Small (2–20 employees)</label>
-      <label><input type="radio" name="companySize" value="1.2"> Medium (21–100 employees)</label>
-      <label><input type="radio" name="companySize" value="1.4"> Large (100+ employees)</label>
-    </div>
+      <fieldset class="mb-4">
+        <legend>Core Features</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="3000" id="login" />
+          <label class="form-check-label" for="login">User Login/Authentication</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="5000" id="dashboard" />
+          <label class="form-check-label" for="dashboard">Dashboard</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="7000" id="chat" />
+          <label class="form-check-label" for="chat">Real-time Chat</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="5000" id="payment" />
+          <label class="form-check-label" for="payment">Payment Integration</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="4000" id="barcode" />
+          <label class="form-check-label" for="barcode">Barcode Scanner</label>
+        </div>
+      </fieldset>
 
-    <div class="section">
-      <h3>Urgency</h3>
-      <label><input type="radio" name="urgency" value="1" checked> Standard Timeline</label>
-      <label><input type="radio" name="urgency" value="1.2"> Urgent (+20%)</label>
-    </div>
+      <fieldset class="mb-4">
+        <legend>Design Requirements</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="8000" id="customUI" />
+          <label class="form-check-label" for="customUI">Custom UI/UX</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="4000" id="branding" />
+          <label class="form-check-label" for="branding">Branding</label>
+        </div>
+      </fieldset>
 
-    <div class="section">
-      <input type="hidden" name="estimate" id="estimateField">
-      <button type="button" onclick="calculateEstimate(false)">Preview Estimate</button>
-      <button type="button" onclick="showConfirmation()">Send Estimate</button>
+      <fieldset class="mb-4">
+        <legend>Data & Integrations</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="5000" id="apiIntegration" />
+          <label class="form-check-label" for="apiIntegration">API Integration</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="3000" id="cloudHosting" />
+          <label class="form-check-label" for="cloudHosting">Cloud Hosting Setup</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="mb-4">
+        <legend>Post-Launch Support</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="feature" value="6000" id="support" />
+          <label class="form-check-label" for="support">First 3 Months Support</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="mb-4">
+        <legend>Company Size</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="companySize" value="1.0" id="solo" checked />
+          <label class="form-check-label" for="solo">Solo / Startup</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="companySize" value="1.1" id="small" />
+          <label class="form-check-label" for="small">Small (2–20 employees)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="companySize" value="1.2" id="medium" />
+          <label class="form-check-label" for="medium">Medium (21–100 employees)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="companySize" value="1.4" id="large" />
+          <label class="form-check-label" for="large">Large (100+ employees)</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="mb-4">
+        <legend>Urgency</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="urgency" value="1" id="standard" checked />
+          <label class="form-check-label" for="standard">Standard Timeline</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="urgency" value="1.2" id="urgent" />
+          <label class="form-check-label" for="urgent">Urgent (+20%)</label>
+        </div>
+      </fieldset>
+
+      <input type="hidden" name="estimate" id="estimateField" />
+
+      <div class="mb-3 d-flex gap-2 flex-wrap">
+        <button type="button" class="btn btn-primary" onclick="calculateEstimate(false)">Preview Estimate</button>
+        <button type="button" class="btn btn-success" onclick="showConfirmation()">Send Estimate</button>
+        <button type="button" class="btn btn-secondary" onclick="downloadPDF()">Download PDF</button>
+      </div>
+
       <p class="total" id="estimateDisplay">Estimated Cost: R0</p>
-      <p class="total" id="discountedDisplay" style="color: #d9534f;"></p>
-    </div>
-  </form>
-
-  <div id="confirmationModal">
-    <div class="modal-content">
-      <p><strong>Confirm sending the estimate?</strong></p>
-      <p>This is a base estimate and we’re open to discussing a solution that fits your budget.</p>
-      <button onclick="calculateEstimate(true)">Yes, Send It</button>
-      <button onclick="document.getElementById('confirmationModal').style.display='none'">Cancel</button>
-    </div>
+      <p class="total text-danger" id="discountedDisplay"></p>
+    </form>
   </div>
 
+  <!-- Confirmation Modal -->
+  <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center">
+        <div class="modal-body">
+          <h5 class="mb-3" id="confirmationModalLabel">Confirm sending the estimate?</h5>
+          <p>This is a base estimate and we’re open to discussing a solution that fits your budget.</p>
+          <button type="button" class="btn btn-success me-2" onclick="confirmSend()">Yes, Send It</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer id="footer" class="footer position-relative">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Mewtee</strong> <span>All Rights Reserved</span></p>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <!-- Bootstrap JS bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+	<!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
   <script>
+    // Bootstrap form validation
+    (() => {
+      'use strict';
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+
+    let lastEstimate = { total: 0, discounted: 0 };
+
     function calculateEstimate(send = false) {
       const checkboxes = document.querySelectorAll('input[name="feature"]:checked');
       const urgencyFactor = parseFloat(document.querySelector('input[name="urgency"]:checked').value);
@@ -118,6 +310,9 @@
       total = total * urgencyFactor * companySizeFactor;
       const discounted = total * 0.9;
 
+      lastEstimate.total = total;
+      lastEstimate.discounted = discounted;
+
       document.getElementById('estimateDisplay').textContent = `Estimated Cost: R${total.toLocaleString()}`;
       document.getElementById('discountedDisplay').textContent = `Limited-Time Offer: R${discounted.toLocaleString()} (10% Discount)`;
 
@@ -128,9 +323,76 @@
       }
     }
 
+    // Show confirmation modal using Bootstrap modal methods
     function showConfirmation() {
-      calculateEstimate(false);
-      document.getElementById('confirmationModal').style.display = 'flex';
+      // Check form validity before showing modal
+      const form = document.getElementById('estimatorForm');
+      if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+        return;
+      }
+      calculateEstimate(false); // update estimate display
+      const modal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+      modal.show();
+    }
+
+    function confirmSend() {
+      calculateEstimate(true);
+    }
+
+    // Download estimate as PDF using jsPDF
+    async function downloadPDF() {
+      const { jsPDF } = window.jspdf;
+      calculateEstimate(false); // ensure latest values
+
+      const doc = new jsPDF();
+
+      doc.setFontSize(18);
+      doc.text('Custom Software Project Estimate', 20, 20);
+
+      doc.setFontSize(12);
+      doc.text(`Name: ${document.getElementById('nameInput').value || '[Not Provided]'}`, 20, 40);
+      doc.text(`Email: ${document.getElementById('emailInput').value || '[Not Provided]'}`, 20, 50);
+
+      let y = 65;
+      doc.setFontSize(14);
+      doc.text('Selected Features:', 20, y);
+      y += 8;
+
+      const checkedFeatures = [...document.querySelectorAll('input[name="feature"]:checked')];
+      if (checkedFeatures.length === 0) {
+        doc.text('- None selected', 30, y);
+        y += 8;
+      } else {
+        checkedFeatures.forEach(feat => {
+          doc.text(`- ${feat.parentElement.textContent.trim()}`, 30, y);
+          y += 8;
+        });
+      }
+
+      const companySizeLabel = document.querySelector('input[name="companySize"]:checked').parentElement.textContent.trim();
+      const urgencyLabel = document.querySelector('input[name="urgency"]:checked').parentElement.textContent.trim();
+
+      doc.text(`Company Size: ${companySizeLabel}`, 20, y);
+      y += 10;
+      doc.text(`Urgency: ${urgencyLabel}`, 20, y);
+      y += 15;
+
+      doc.setFontSize(14);
+      doc.text('Estimate Summary:', 20, y);
+      y += 8;
+
+      doc.setFontSize(12);
+      doc.text(`Estimated Cost: R${lastEstimate.total.toLocaleString()}`, 30, y);
+      y += 8;
+      doc.text(`Limited-Time Offer: R${lastEstimate.discounted.toLocaleString()} (10% Discount)`, 30, y);
+      y += 15;
+
+      doc.setFontSize(10);
+      doc.setTextColor(100);
+      doc.text("Note: This is a base estimate. We're happy to tailor a solution that suits your budget.", 20, y);
+
+      doc.save('mewtee_software_estimate.pdf');
     }
   </script>
 </body>
