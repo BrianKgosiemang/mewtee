@@ -43,20 +43,10 @@
   <link href="assets/css/main.css" rel="stylesheet">
   
     <style>
-    body {
-      background: #f8f9fa;
-      padding: 2rem;
-      font-family: Arial, sans-serif;
-    }
     .total {
       font-size: 1.5em;
       font-weight: bold;
       color: green;
-    }
-    /* Modal custom override */
-    #confirmationModal .modal-content {
-      padding: 2rem;
-      border-radius: 1rem;
     }
     .note {
       font-style: italic;
@@ -66,7 +56,7 @@
     }
   </style>
 </head>
-<body>
+<body class="index-page">
 
   <header id="header" class="header dark-background d-flex flex-column justify-content-center">
     <i class="header-toggle d-xl-none bi bi-list"></i>
@@ -96,7 +86,6 @@
   
   <main class="main">
 
-  <div class="container">
     <h2 class="mb-3">Custom Software Project Estimator</h2>
     <p class="note">Note: This is a base estimate to help you plan — we're happy to work with your budget and offer flexible pricing where possible.</p>
 
@@ -228,7 +217,6 @@
       <p class="total" id="estimateDisplay">Estimated Cost: R0</p>
       <p class="total text-danger" id="discountedDisplay"></p>
     </form>
-  </div>
 
   <!-- Confirmation Modal -->
   <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
