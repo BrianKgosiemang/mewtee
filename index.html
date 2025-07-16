@@ -38,6 +38,10 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -175,49 +179,27 @@
                 <h2>Passionate About innovation</h2>
               </div>
 
-<div class="description">
-    <p>At Mewtee, we specialize in creating innovative software solutions that drive efficiency, enhance user experiences, and empower businesses. With a focus on seamless design and scalable development, we craft products that not only meet today’s demands but anticipate the challenges of tomorrow.</p>
-
-    <p>Our team of experts combines technical excellence with creative vision to bring your ideas to life. Whether you're looking to optimize existing systems or develop a new digital product from the ground up, we’re here to turn your vision into a game-changing reality.</p>
-</div>
-
-              <div class="stats-grid">
-                <div class="stat-item">
-                  <div class="stat-number">100+</div>
-                  <div class="stat-label">Projects Completed</div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-number">15+</div>
-                  <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-number">98%</div>
-                  <div class="stat-label">Client Satisfaction</div>
-                </div>
-              </div>
-
-<div class="details-grid">
-    <div class="detail-row">
-        <div class="detail-item">
-            <span class="detail-label">Core Competencies</span>
-            <span class="detail-value">Full-stack Development, Cloud Solutions, AI/ML</span>
-        </div>
-        <div class="detail-item">
-            <span class="detail-label">Industry Expertise</span>
-            <span class="detail-value">Fintech, Healthcare, E-Commerce, Manufacturing</span>
+<div class="stats-grid row text-center my-5">
+    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="stat-item">
+            <div class="stat-number display-4 fw-bold">100+</div>
+            <div class="stat-label text-muted">Projects Delivered</div>
         </div>
     </div>
-    <div class="detail-row">
-        <div class="detail-item">
-            <span class="detail-label">Technologies</span>
-            <span class="detail-value">React, Node.js, Python, AWS, Docker</span>
+    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="stat-item">
+            <div class="stat-number display-4 fw-bold">15+</div>
+            <div class="stat-label text-muted">Years of Combined Experience</div>
         </div>
-        <div class="detail-item">
-            <span class="detail-label">Company Focus</span>
-            <span class="detail-value">Scalable Solutions, Performance Optimization, Digital Transformation</span>
+    </div>
+    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="stat-item">
+            <div class="stat-number display-4 fw-bold">98%</div>
+            <div class="stat-label text-muted">Client Satisfaction Rate</div>
         </div>
     </div>
 </div>
+
 
 
               <div class="cta-section">
@@ -821,12 +803,19 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <! -- Scroll trigger for animations-->
+  <script>
+  AOS.init({
+    duration: 800, 
+    once: true,    
+  });
+</script>
+  
   <-- Contact Form -->
-
     <script>
   const form = document.getElementById("contact-form");
   const loading = document.querySelector(".loading");
