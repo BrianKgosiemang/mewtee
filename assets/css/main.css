@@ -2686,3 +2686,47 @@ section,
   color: #28a745;
   margin: 15px 0;
 }
+/* Products Section - Ensure readable text colors */
+.products .product-card {
+  background-color: #ffffff;          /* Explicit white/light bg if needed */
+  color: #333333;                     /* Dark default text */
+}
+
+.products .product-card h3 {
+  color: #222222;                     /* Slightly darker for headings */
+  margin-bottom: 15px;
+}
+
+.products .product-card p {
+  color: #555555;                     /* Readable paragraph gray */
+  margin-bottom: 20px;
+}
+
+.products .product-pricing span {
+  color: #28a745;                     /* Green for pricing (or your accent color) */
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.products .product-icon i {
+  color: #007bff;                     /* Blue icon to match btn-primary */
+}
+
+/* Optional: Hover effect for better interactivity */
+.products .product-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  transition: all 0.3s ease;
+}
+
+/* Make sure buttons look good */
+.products .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #ffffff;
+}
+
+.products .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
