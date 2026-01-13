@@ -862,7 +862,7 @@
           if (data.errors) {
             errorMessage.innerHTML = data.errors.map(error => error.message).join(", ");
           } else {
-            errorMessage.innerHTML = "There was a problem submitting your form.";
+            errorMessage.innerHTML = "There was a problem submitting your form. ";
           }
           errorMessage.style.display = "block";
         });
