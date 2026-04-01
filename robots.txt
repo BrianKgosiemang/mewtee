@@ -1,0 +1,11 @@
+# Allow all search engines to crawl the whole site
+User-agent: *
+Allow: /
+
+# Disallow specific sensitive areas (examples below)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+
+# Link to your XML sitemap to help indexing
+Sitemap: https://mewtee.xyz/sitemap.xml
